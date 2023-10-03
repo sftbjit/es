@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AggregateController;
+use App\Http\Controllers\ListController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'welcome');
+Route::get('/search', [SearchController::class, 'show']);
+Route::post('/search', [SearchController::class, 'search']);
+Route::get('/list', ListController::class);
+Route::get('/aggregations', AggregateController::class);

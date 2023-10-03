@@ -30,6 +30,7 @@ return [
      */
     'indexes' => [
          \App\Models\Post::class,
+        \App\Models\Cartographer::class,
 //        'users_index' => [
 //            'properties' => [
 //                'id' => 'keyword',
